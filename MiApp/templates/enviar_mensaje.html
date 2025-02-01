@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="mensaje-popup">
+    <h3>Enviar mensaje a {{ receptor.username }}</h3>
+    <form method="POST">
+      {% csrf_token %}
+      <textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+{% endblock %}

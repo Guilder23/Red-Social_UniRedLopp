@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="containerAmigos">
+    <h1 class="title">Mis Amigos</h1>
+    <ul class="friend-list">
+        {% for amistad in amigos %}
+            <li class="friend-item">
+                {% if amistad.usuario1 == user %}
+                    <!-- Foto de perfil del amigo -->
+                    <img src="{{ amistad.usuario2.perfil.foto_perfil.url|default:'/static/images/default-profile.png' }}" 
+                         alt="Foto de {{ amistad.usuario2.username }}" 
+                         class="profile-image">
+                    <span class="friend-name">{{ amistad.usuario2.username }}</span>
+                {% else %}
+                    <!-- Foto de perfil del amigo -->
+                    <img src="{{ amistad.usuario1.perfil.foto_perfil.url|default:'/static/images/default-profile.png' }}" 
+                         alt="Foto de {{ amistad.usuario1.username }}" 
+                         class="profile-image">
+                    <span class="friend-name">{{ amistad.usuario1.username }}</span>
+                {% endif %}
+                <button class="view-profile-btn">Ver Perfil</button>
+            </li>
+        {% empty %}
+            <p class="no-friends">No tienes amigos aún.</p>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+
+
+

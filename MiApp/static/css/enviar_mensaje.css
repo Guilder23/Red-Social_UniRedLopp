@@ -1,0 +1,84 @@
+/* Estilo para el popup de mensaje */
+.mensaje-popup {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Título del popup */
+.mensaje-popup h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo para el textarea */
+.mensaje-popup textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    resize: none;
+    min-height: 150px;
+    margin-bottom: 20px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+/* Estilo al hacer focus en el textarea */
+.mensaje-popup textarea:focus {
+    border-color: #5e6fd7;
+}
+
+/* Estilo del botón */
+.mensaje-popup button {
+    width: 100%;
+    padding: 15px;
+    background-color: #5e6fd7;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambio de color al pasar el cursor sobre el botón */
+.mensaje-popup button:hover {
+    background-color: #4a59c3;
+}
+
+/* Estilo general para la página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fb;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Animación para el fade-in del popup */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

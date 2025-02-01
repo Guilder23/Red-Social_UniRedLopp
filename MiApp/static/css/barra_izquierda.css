@@ -1,0 +1,113 @@
+/* Menú lateral para mensajes */
+.menu-container-izquierdo {
+    position: fixed;
+    right: 1%;
+    top: 13%;
+    width: 20%;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.menu-container-izquierdo h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu li {
+    margin-bottom: 10px;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.side-menu a:hover {
+    color: #0a0a0a;
+}
+
+/* Estilos para la lista de amigos en el menú lateral */
+.friend-itemm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #c0c1c4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    background-color: rgb(214, 204, 204);
+}
+
+.friend-itemm:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Nombre del amigo */
+.friend-namee {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    max-width: 170px;
+    overflow: hidden;
+    
+}
+
+.view-profile-btnnn {
+    font-size: 5px;
+    padding: 0;
+    margin-left: 1px;
+    background-color: #1347e4;
+    color: white;
+}
+.view-profile-btnnn:hover {
+    background-color: #031341;
+    color: white;
+    transform: scale(1.05);
+}
+.view-profile-btnn {
+    font-size: 9px;
+    padding: 0;
+    margin-left: 1px;
+    background-color: #1b942b;
+    color: white;
+}
+.view-profile-btnn:hover {
+    color: white;
+    background-color: #058325;
+    transform: scale(1.05);
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .friend-itemm {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .friend-itemm .friend-namee {
+        margin-bottom: 10px;
+    }
+
+    .view-profile-btnn {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 1rem;
+    }
+}

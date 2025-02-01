@@ -1,0 +1,218 @@
+/* Contenedor principal de las publicaciones */
+.inicio-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    margin-top: 7%;
+    margin-left: 0%;
+}
+/*Historia*/
+.historia_agregar{
+    background-color: rgb(248, 245, 238);
+    box-shadow: 0 0 3px 1px black;
+    border-radius: 15px;
+    padding: 2px;
+    margin: 2px;
+    width: 100%;
+    height: 20%;
+}
+.imagen_agregar{
+    width: 100px;
+    height: 200px;
+    border-radius: 15px;
+    background-color: rgb(248, 246, 246);
+    box-shadow: 0 0 5px  1px black;
+    padding: 2px;
+}
+.imagen_agregar img{
+    width: 100%;
+    height: 65%;
+    border-radius: 15px 15px 0 0;
+    
+}
+.icono_agregar_historia{
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    padding: none;
+    margin-bottom: 5px;
+    margin-left: 35px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 3px 5px  1px rgb(41, 40, 40);
+}
+.imagen_agregar button{
+    text-align: center;
+    width: 95%;
+    height: 15%;
+    border-radius: 20px;
+    padding: 2px;
+    font-size: 12px;
+    box-shadow: 1px 1px 5px  1px black;
+}
+.imagen_agregar button a{
+    text-decoration: none;
+    color: white;
+}
+/* Estilo de cada publicación */
+.publicacion {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #c5bbbb;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Información de la publicación (usuario, fecha) */
+.publicacion p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+/* Contenido de la publicación */
+.publicacion .contenido {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Imagen de la publicación */
+.imagen-publicacion {
+    width: 500px; /* Define un ancho fijo de 300px */
+    height: 300px; /* Define una altura fija de 300px */
+    object-fit: cover; /* Hace que la imagen se recorte y se ajuste dentro del contenedor sin distorsionarse */
+    border-radius: 8px;
+    margin: 20px 0;
+    display: block;
+}
+
+
+/* Botón "Me gusta" 
+.btn-me-gusta {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-me-gusta:hover {
+    background-color: #45a049;
+}
+*/
+.btn-me-gusta:active {
+    transform: scale(0.98);
+}
+
+/* Comentarios */
+.comentarios {
+    margin-top: 10px;
+}
+
+.comentarios h4 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/* Estilo de cada comentario */
+.comentarios p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+/* Formulario para agregar comentarios */
+.comentarios form {
+    margin-top: 10px;
+}
+
+.comentarios textarea {
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    resize: vertical;
+    max-height: 30px;
+}
+
+.comentarios button {
+    background-color: #3950d4;
+    color: white;
+    padding: 7px 13px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.comentarios button:hover {
+    background-color: #757c76;
+}
+
+.comentarios button:active {
+    transform: scale(0.98);
+}
+
+/* Línea divisoria entre publicaciones */
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+
+/*ME GUSTA CON ANIMACION*/
+
+.btn-me-gusta {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ffcccc;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    overflow: hidden;
+    position: relative;
+}
+
+.btn-me-gusta:hover {
+    background-color: #ff9999;
+}
+
+.corazon {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 100% 40%, 80% 100%, 50% 75%, 20% 100%, 0% 40%);
+    animation: volar 3s ease-out forwards;
+    opacity: 0.8;
+}
+
+@keyframes volar {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0, -500px) scale(1.5);
+        opacity: 0;
+    }
+}
+

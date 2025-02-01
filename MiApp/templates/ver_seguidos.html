@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="containerSeguidos">
+    <h2 class="title">Usuarios Seguidos</h2>
+    <ul class="followed-list">
+        {% for seguimiento in seguidos %}
+            <li class="followed-item">
+                <div class="user-info">
+                    <!-- Foto de perfil del usuario seguido -->
+                    <img class="user-avatar" 
+                         src="{{ seguimiento.seguido.perfil.foto_perfil.url|default:'/static/images/default-profile.png' }}" 
+                         alt="Foto de {{ seguimiento.seguido.username }}" 
+                         width="50">
+                    <span class="followed-name">{{ seguimiento.seguido.username }}</span>
+                </div>
+                <button class="view-profile-btn">Ver Perfil</button>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if not seguidos %}
+        <p class="no-followed">No has seguido a ningún usuario aún.</p>
+    {% endif %}
+</div>
+{% endblock %}

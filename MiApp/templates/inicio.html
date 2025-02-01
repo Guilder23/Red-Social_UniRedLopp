@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="inicio-container">
+        <div>
+            <div class="historia_agregar">
+                <p>¿En que estas pensando? "{{ user.username }}" </p>
+                {% if user.perfil.foto_perfil %}
+                <div class="imagen_agregar">
+                    <a href="{% url 'agregar_historia' %}"></a>
+                    <img src="{{ user.perfil.foto_perfil.url }}"  alt="Foto de perfil" width="50" height="50">
+                    <div class="icono_agregar_historia">
+                        <ion-icon name="add"></ion-icon>
+                    </div>
+                    <Button><a href="{% url 'agregar_historia' %}"> agregar historia</a></Button>
+                </div>
+              {% else %}
+                <img src="/static/default-avatar.png" alt="Foto de perfil" width="40" height="40">
+                <Button><a href="{% url 'agregar_historia' %}"> agregar historia</a></Button>
+              {% endif %}
+              
+            </div>
+        </div>
+       
+        {% for publicacion in publicaciones %}
+            <div class="publicacion">
+                <img src="{{ publicacion.usuario.perfil.foto_perfil.url|default:'/static/images/default-profile.png' }}" 
+                     alt="Foto de {{ publicacion.usuario.username }}" 
+                     class="profile-image">
+                <p><strong>{{ publicacion.usuario.username }}</strong> publicó el {{ publicacion.fecha_creacion }}</p>
+                <p>{{ publicacion.contenido }}</p>
+                {% if publicacion.imagen %}
+                    <img src="{{ publicacion.imagen.url }}" alt="Imagen de la publicación" class="imagen-publicacion">
+                {% endif %}
+                <button class="btn-me-gusta" data-id="{{ publicacion.id }}">
+                    ❤️ {{ publicacion.total_me_gusta }} Me gusta
+                </button>
+
+                <div class="comentarios">
+                    <h4>Comentarios:</h4>
+                    {% for comentario in publicacion.comentarios.all %}
+                        <p><strong>{{ comentario.usuario.username }}:</strong> {{ comentario.contenido }}</p>
+                    {% empty %}
+                        <p>Sin comentarios.</p>
+                    {% endfor %}
+                    <form method="post" action="{% url 'comentar' publicacion.id %}">
+                        {% csrf_token %}
+                        <textarea name="contenido" placeholder="Escribe un comentario..." required></textarea>
+                        <button type="submit">Comentar</button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    </div>
+{% endblock %}

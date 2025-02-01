@@ -1,0 +1,21 @@
+{% load static %}
+
+<!-- Ícono para mostrar/ocultar el menú -->
+<div class="menu-icon" id="menuToggle">
+    <ion-icon name="menu-outline"></ion-icon>
+</div>
+
+<!-- Menú lateral -->
+<div class="menu-container" id="sideMenu">
+    <h2>Menú</h2>
+    <nav class="side-menu">
+        <div>
+            <li><a href="{% url 'ver_amigos' %}">Amigos</a></li>
+            <li><a href="{% url 'ver_seguidores' %}">Seguidores</a></li>
+            <li><a href="{% url 'ver_seguidos' %}">Seguidos</a></li>
+            <li><a href="{% url 'ver_usuarios' %}">Usuarios</a></li>
+        </div>
+    </nav>
+</div>
+
+

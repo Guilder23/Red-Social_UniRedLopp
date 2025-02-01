@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="registro-container">
+        <h1>Registro de usuario</h1>
+        <form method="post" class="form-registro">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.as_p }}
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn-registrarse">Registrarse</button>
+            </div>
+        </form>
+        <p class="registro-footer">
+            ¿Ya tienes cuenta? <a href="{% url 'login' %}">Inicia sesión aquí</a>.
+        </p>
+    </div>
+{% endblock %}

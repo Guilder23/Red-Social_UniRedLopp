@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="containerSeguidores">
+    <h2 class="title">Seguidores</h2>
+    <ul class="follower-list">
+        {% for seguimiento in seguidores %}
+            <li class="follower-item">
+                <!-- Foto de perfil del seguidor -->
+                <img src="{{ seguimiento.seguidor.perfil.foto_perfil.url|default:'/static/images/default-profile.png' }}" 
+                     alt="Foto de {{ seguimiento.seguidor.username }}" 
+                     class="profile-image">
+                <span class="follower-name">{{ seguimiento.seguidor.username }}</span>
+                <button class="view-profile-btn">Ver Perfil</button>
+            </li>
+        {% endfor %}
+    </ul>
+    {% if not seguidores %}
+        <p class="no-followers">No tienes seguidores aún.</p>
+    {% endif %}
+</div>
+{% endblock %}

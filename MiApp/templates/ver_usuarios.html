@@ -1,0 +1,24 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="containerUsuarios">
+    <h2 class="section-title">Usuarios registrados</h2>
+
+    <!-- Campo de búsqueda -->
+     <label for="">Buscar personas</label>
+    <input type="text" id="buscadorUsuarios" placeholder="Buscar por nombre de usuario..." class="buscador" onkeyup="buscarUsuarios()" />
+
+    <ul class="user-list">
+      {% for usuario in usuarios %}
+        <li class="user-item">
+          <div class="user-info">
+            <span class="username">{{ usuario.username }}</span>
+            <img src="{{ usuario.perfil.foto_perfil.url }}" alt="Foto de perfil" class="profile-image">
+          </div>
+          <a href="{% url 'seguir_usuario' usuario.id %}" class="follow-btn">Seguir</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

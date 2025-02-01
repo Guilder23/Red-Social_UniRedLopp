@@ -1,0 +1,110 @@
+/* Contenedor principal de la página de creación de publicación */
+.publicacion-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Sección de la cabecera de la publicación */
+.contenido-publicacion h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contenido-publicacion p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Formulario de la publicación */
+.form-publicacion {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilo de los campos de texto */
+.campo-publicacion textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    resize: vertical;
+    min-height: 120px;
+    margin-bottom: 20px;
+}
+
+/* Estilo del campo de imagen */
+.campo-imagen {
+    margin-bottom: 20px;
+}
+
+.campo-imagen label {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.campo-imagen input[type="file"] {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    width: 100%;
+}
+
+/* Estilo del botón de publicación */
+.campo-boton {
+    text-align: center;
+}
+
+.btn-publicar {
+    background-color: #0f47c0;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-publicar:hover {
+    background-color: #515752;
+}
+
+.btn-publicar:active {
+    transform: scale(0.98);
+}
+
+/* Enlace para volver al inicio */
+.volver-inicio {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link-volver {
+    font-size: 1rem;
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.link-volver:hover {
+    color: #388E3C;
+}
+
+/* Estilos generales para el formulario */
+.form-publicacion {
+    max-width: 700px;
+    margin: 0 auto;
+}

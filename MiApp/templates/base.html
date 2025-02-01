@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Social</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/barraNavegacion.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/registro.css' %}">
+    <link rel="stylesheet" href="{% static 'css/perfil.css' %}">
+    <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
+    <link rel="stylesheet" href="{% static 'css/agregar_publicacion.css' %}">
+    <link rel="stylesheet" href="{% static 'css/menu_lateral.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ver_amigos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ver_seguidores.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ver_seguidos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ver_usuarios.css' %}">
+    <link rel="stylesheet" href="{% static 'css/enviar_mensaje.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chat.css' %}">
+    <link rel="stylesheet" href="{% static 'css/barra_izquierda.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bandeja_entrada.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ver_historias.css' %}">
+    <link rel="stylesheet" href="{% static 'css/agregar_historia.css' %}">
+</head>
+<body>
+    
+    <!-- Barra de navegación -->
+     
+    <nav class="BarraNavegacion">
+        <div class="logo">
+            <!-- Agrega tu imagen/logo aquí -->
+            <img src="{% static 'img/logo_UniRed-Loop.png' %}" alt="Logo de UniRed Loop" class="logo-img" >
+            <!-- Agrega el nombre de la página -->
+        </div>
+                
+            <!-- Lista de navegación -->
+             <div class="menu-navegacion">
+                <ul class="nav-menu">
+                    <li><a href="{% url 'inicio' %}">Inicio <ion-icon name="home-outline"></ion-icon></a></li>
+                    <li><a href="{% url 'registro' %}">Registro <ion-icon name="person-add-outline"></ion-icon></a></li>
+                    <li><a href="{% url 'login' %}">Login<ion-icon name="person-outline"></ion-icon></a></li>
+                    <li><a href="{% url 'perfil' %}">Perfil <ion-icon name="id-card-outline"></ion-icon></a></li>
+                    <li><a href="{% url 'agregar_publicacion' %}">Publicar <ion-icon name="add-circle-outline"></ion-icon></a></li>
+                    <li><a href="{% url 'logout' %}">Cerrar <ion-icon name="log-out-outline"></ion-icon></a></li>
+                </ul>
+            </div>
+                <!-- Buscador de publicaciones -->
+        <div class="buscador-container">
+            <input type="text" id="buscador" placeholder="Buscar por nombre de usuario" onkeyup="buscarPublicacion()">
+            <button onclick="buscarPublicacion()"><ion-icon name="search-outline"></ion-icon></button>
+        </div>
+
+        <!-- Área para mostrar los resultados -->
+        <div id="resultadosBusqueda"></div>
+
+        {% if user.is_authenticated %}
+            <div class="Perfil">
+                {% if user.perfil.foto_perfil %}
+                    <img src="{{ user.perfil.foto_perfil.url }}" alt="Foto de perfil">
+                {% else %}
+                    <img src="{% static 'images/default-avatar.png' %}" alt="Foto de perfil">
+                {% endif %}
+                <label><a href="{% url 'perfil' %}">{{ user.username }}</a></label>
+            </div>
+        {% endif %}
+        <!-- Botón para menú hamburguesa -->
+        <div class="menu-togglee" onclick="toggleMenu()">
+            <ion-icon name="apps-outline"></ion-icon>
+        </div>
+    </nav>
+    <!-- Incluir menú lateral adicional -->
+    {% include 'menu_lateral.html' %}
+    {% include 'barra_izquierda.html' %}
+
+    <!-- Contenido principal -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Mensaje que se muestra con confirmación de CERRAR SESIÓN -->
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <script src="{% static 'js/buscador.js' %}"></script>
+    <script src="{% static 'js/me_gustaPublicacion.js' %}"></script>
+    <script src="{% static 'js/ver_historias.js' %}"></script>
+    <script src="{% static 'js/menu_lateral.js' %}"></script>
+    <script src="{% static 'js/barra_navegacion.js' %}"></script>
+</body>
+</html>

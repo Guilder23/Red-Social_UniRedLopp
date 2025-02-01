@@ -1,0 +1,145 @@
+
+
+/* Contenedor principal */
+.containerBandeja {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+h2 {
+    font-size: 2rem;
+    color: #4e73df;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Lista de bandeja */
+.bandeja-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Elemento de la bandeja */
+.bandeja-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: linear-gradient(145deg, #e0eaff, #c3cfe2);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+}
+
+.bandeja-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Información del usuario */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-info img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+/* Nombre de usuario */
+.user-info span {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+.bandeja-item h3{
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+/* Contador de mensajes no leídos */
+.bandeja-item span {
+    padding: 5px;
+    font-size: 1rem;
+    color: #df380e;
+    font-weight: 500;
+}
+.bandeja-item span div {
+    display: flex;
+    display: inline-block;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 500;
+    padding: 5px;
+    height: 21px;
+    width:21px;
+    border-radius: 15px;
+    background-color: #098f1b;
+}
+
+
+/* Botón de chat */
+.chat-btn {
+    padding: 10px 20px;
+    background-color: #4e73df;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 5px;
+}
+
+.chat-btn:hover {
+    background-color: #2e59d9;
+}
+
+/* Estilo para el input de búsqueda */
+#buscadorUsuarios {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    color: #555;
+    transition: border-color 0.3s ease;
+}
+
+#buscadorUsuarios:focus {
+    border-color: #4e73df;
+    outline: none;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .containerBandeja {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .bandeja-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .user-info {
+        gap: 10px;
+    }
+
+    .chat-btn {
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,33 @@
+{% load static %}
+
+<!-- Menú lateral para mensajes -->
+<div class="menu-container-izquierdo">
+    <h2>Mensajes</h2>
+    <nav class="side-menu">
+        <ul>
+            <li><a href="{% url 'bandeja_entrada' %}"> <ion-icon name="notifications-outline"></ion-icon> Bandeja de Entrada</a></li>
+
+            {% if ultimo_chat_id %}
+                <li><a href="{% url 'chat' receptor_id=ultimo_chat_id %}">Chat con Usuario</a></li>
+            {% else %}
+                <li><a href="#">No hay chats recientes</a></li>
+            {% endif %}
+
+            {% for amistad in amigos %}
+                <li class="friend-itemm">
+                    {% if amistad.usuario1 == user %}
+                        <span class="friend-namee">{{ amistad.usuario2.username }}</span>
+                        <a href="{% url 'enviar_mensaje' receptor_id=amistad.usuario2.id %}" class="view-profile-btnn">Mensaje</a>
+                        <a href="{% url 'chat' receptor_id=amistad.usuario2.id %}" class="view-profile-btn">Chat</a>
+                    {% elif amistad.usuario2 == user %}
+                        <span class="friend-namee">{{ amistad.usuario1.username }}</span>
+                        <a href="{% url 'enviar_mensaje' receptor_id=amistad.usuario1.id %}" class="view-profile-btnnn">Mensaje</a>
+                        <a href="{% url 'chat' receptor_id=amistad.usuario1.id %}" class="view-profile-btnn">Chat</a>
+                    {% endif %}
+                </li>
+            {% empty %}
+                <p class="no-friends">Solo puedes chatear con tus amigos.</p>
+            {% endfor %}
+        </ul>
+    </nav>
+</div>

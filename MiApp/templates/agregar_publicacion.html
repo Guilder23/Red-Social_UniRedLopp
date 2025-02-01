@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="publicacion-container">
+        <div class="contenido-publicacion">
+            <h1>Crear Publicación</h1>
+            <p><strong>{{ usuario.username }}</strong></p>
+        </div>
+        
+        <form method="POST" enctype="multipart/form-data" class="form-publicacion">
+            {% csrf_token %}
+            <div class="campo-publicacion">
+                <textarea name="contenido" placeholder="Escribe algo..." required></textarea>
+            </div>
+
+            <div class="campo-imagen">
+                <label for="imagen">Añadir imagen:</label>
+                <input type="file" name="imagen" accept="image/*">
+            </div>
+
+            <div class="campo-boton">
+                <button type="submit" class="btn-publicar">Publicar</button>
+            </div>
+        </form>
+        
+        <div class="volver-inicio">
+            <a href="{% url 'inicio' %}" class="link-volver">Volver al inicio</a>
+        </div>
+    </div>
+{% endblock %}

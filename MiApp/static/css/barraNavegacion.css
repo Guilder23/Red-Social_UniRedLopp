@@ -1,0 +1,331 @@
+/* General de la barra de navegación */
+.BarraNavegacion {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Separar enlaces y perfil */
+    background: linear-gradient(45deg, #1e3c72, #2a5298); /* Gradiente moderno */
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-family: 'Arial', sans-serif;
+    width: 97%;
+    left: 0%;
+    top: 0%;
+    z-index: 2;
+}
+
+/* Estilo de la lista de navegación */
+.BarraNavegacion .menu-navegacion ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.BarraNavegacion .menu-navegacion ul li {
+    margin: 0 10px;
+}
+
+.BarraNavegacion .menu-navegacion ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.BarraNavegacion .menu-navegacion ul li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+    transform: scale(1.1); /* Animación de escala */
+}
+
+/* Estilo para la clase Perfil */
+.BarraNavegacion .Perfil {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Fondo decorativo */
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.BarraNavegacion .Perfil:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.BarraNavegacion .Perfil img {
+    margin-right: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    transition: border 0.3s ease-in-out;
+}
+
+.BarraNavegacion .Perfil img:hover {
+    border: 2px solid #2a5298; /* Cambio de color del borde */
+}
+
+.BarraNavegacion .Perfil label {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+/* Ajuste para colocar "Cerrar sesión" y Perfil al final */
+.BarraNavegacion  .menu-navegacion ul li:last-child {
+    margin-right: 10px; /* Separación con el perfil */
+}
+
+/* Estilos generales para los formularios */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Estilo para los contenedores */
+.inicio-container, .login-container, .registro-container, .publicacion-container {
+    max-width: 800px;
+    margin: 50px auto;
+}
+
+/* Estilo para publicaciones */
+.publicacion {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.publicacion img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.btn-me-gusta {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-me-gusta:hover {
+    background-color: #ff4c36;
+}
+
+.comentarios {
+    margin-top: 20px;
+}
+
+.comentarios textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.comentarios button {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comentarios button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos de los enlaces */
+.link-volver {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.link-volver:hover {
+    text-decoration: underline;
+}
+
+/*BUSCADOR EN LA BARRA DE NAVEGACION*/
+/* Estilos para el buscador */
+.buscador-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+#buscador {
+    padding: 8px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    width: 200px;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.buscador-container button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.buscador-container button:hover {
+    background-color: #0056b3;
+    
+}
+.content{
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 55%;
+    z-index: 1;
+ }
+ .logo{
+    display: flex;
+    width: 50px;
+    height: 50px;
+ }
+ .logo img{
+    width: 60px;
+    height: 50px;
+ }
+ /* General */
+.menu-navegacion {
+    display: flex; /* Ocultar el menú inicialmente */
+    
+}
+
+/* Botón hamburguesa */
+.menu-togglee {
+    display: none; /* Ocultar en pantallas grandes */
+    font-size: 30px;
+    color: #fdfdfd;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    z-index: 1001;
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu-togglee {
+        display: block; /* Mostrar el botón de menú */
+        margin-right: 10px;
+        margin-top: 5px;
+        padding: 1px;
+        background-color: #1e3c72;
+        border-radius: 5px;
+    }
+    .menu-togglee ion-icon{
+        margin-top: 5px;
+    }
+    .menu-togglee hover{
+        box-shadow: 1px 1px 5px 1px black;
+    }
+
+    .menu-navegacion {
+        display: none; /* Ocultar el menú inicialmente */
+        position: fixed;
+        left: 70%;
+        top: 10%;
+        width: 200px;
+        height: 100%;
+        background-color: #1e3c72;
+    }
+
+    .menu-navegacion.active {
+        display: flex; /* Mostrar el menú al hacer clic */
+        flex-direction: column; /* Colocar los enlaces en columna */
+        padding: 20px 0;
+    }
+
+    .nav-menu {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        text-align: none;
+    }
+
+    .nav-menu li {
+        padding: 3px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        
+    }
+
+    /*Buscador CONTAINER*/
+    #buscador {
+        padding: 2px;
+        border-radius: 15px;
+        border: 1px solid #ccc;
+        width: 100px;
+        margin-right: 1px;
+        font-size: 12px;
+    }
+
+    .buscador-container{
+        display: flex;
+        align-items: center;
+        margin-left: 1px;
+    }
+
+    .buscador-container button {
+        border-radius: 30%;
+        padding: 2px;
+        font-size: 12px;
+        transition: background-color 0.3s;
+    }
+    .Perfil{
+        margin-right: 50px;
+        padding: 5px;
+    }
+    /* Estilo para la clase Perfil */
+    .BarraNavegacion .Perfil {
+        padding: 1px 2px;
+        border-radius: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+    .Perfil img{
+        width: 10px;
+        height: 10px;
+    }
+    .Perfil a{
+        font-size: 12px;
+    }
+}

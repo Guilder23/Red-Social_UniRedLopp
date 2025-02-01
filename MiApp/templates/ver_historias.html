@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="historias-carrusel-container">
+    <button class="carrusel-btn" id="prev-btn">&#8592;</button>
+    <div class="historias-carrusel-wrapper">
+        <div class="historias-carrusel" id="carrusel">
+            {% for historia_data in historias_con_reacciones %}
+            <div class="historia" data-historia-id="{{ historia_data.historia.id }}">
+                <div class="usuario-info">
+                    <img src="{{ historia_data.historia.usuario.perfil.foto_perfil.url|default:'/static/images/default-profile.png' }}" 
+                         class="profile-image" alt="Foto de perfil">
+                    <span>{{ historia_data.historia.usuario.username }}</span>
+                </div>
+                <p>{{ historia_data.historia.contenido }}</p>
+                {% if historia_data.historia.imagen %}
+                <img src="{{ historia_data.historia.imagen.url }}" alt="Imagen de historia" class="imagen-historia">
+                {% endif %}
+                <div class="reaccioness">
+                    <button class="btn-like" onclick="react('{{ historia_data.historia.id }}', 'like')">👍 Me gusta <span id="like-count-{{ historia_data.historia.id }}">{{ historia_data.likes }}</span></button>
+                    <button class="btn-dislike" onclick="react('{{ historia_data.historia.id }}', 'dislike')">👎 No me gusta<span id="dislike-count-{{ historia_data.historia.id }}">{{ historia_data.dislikes }}</span></button>
+                </div>
+            </div>
+            {% empty %}
+            <p>No hay historias disponibles.</p>
+            {% endfor %}
+        </div>
+    </div>
+    <button class="carrusel-btn" id="next-btn">&#8594;</button>
+</div>
+
+<!-- Contenedor de los corazones -->
+<div id="hearts-container"></div>
+
+{% endblock %}

@@ -1,0 +1,107 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #333;
+}
+
+/* Registro Container */
+.registro-container {
+    
+    max-width: 500px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+}
+
+.registro-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #6a11cb;
+}
+
+/* Form Styles */
+.form-registro {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-registro input,
+.form-registro select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-registro input:focus {
+    border-color: #6a11cb;
+    outline: none;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+}
+
+/* Button Styles */
+.form-actions {
+    margin-top: 20px;
+}
+
+.btn-registrarse {
+    background: #6a11cb;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.btn-registrarse:hover {
+    background: #2575fc;
+}
+
+/* Footer Link */
+.registro-footer {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.registro-footer a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.registro-footer a:hover {
+    color: #6a11cb;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .registro-container {
+        padding: 15px;
+    }
+
+    .registro-container h1 {
+        font-size: 20px;
+    }
+
+    .btn-registrarse {
+        font-size: 14px;
+    }
+}

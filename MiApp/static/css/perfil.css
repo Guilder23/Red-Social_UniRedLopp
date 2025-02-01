@@ -1,0 +1,145 @@
+/* Estilo general del perfil */
+.perfil-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top:1%;
+    padding: 1px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Sección de información del perfil */
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.perfil-foto img {
+    border-radius: 50%;
+    border: 4px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.perfil-foto img:hover {
+    transform: scale(1.1);
+}
+
+.perfil-bio {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Sección de edición del perfil */
+.editar-perfil {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.editar-perfil form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.editar-perfil .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.editar-perfil label {
+    font-size: 1rem;
+    color: #333;
+}
+
+.editar-perfil input[type="text"],
+.editar-perfil input[type="file"],
+.editar-perfil textarea {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+}
+
+.editar-perfil input[type="text"]:focus,
+.editar-perfil input[type="file"]:focus,
+.editar-perfil textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.editar-perfil button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.editar-perfil button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .perfil-container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    .perfil-info {
+        align-items: flex-start;
+    }
+
+    .perfil-bio {
+        font-size: 1rem;
+    }
+
+    .editar-perfil form {
+        gap: 10px;
+    }
+
+    .editar-perfil input[type="text"],
+    .editar-perfil input[type="file"],
+    .editar-perfil textarea {
+        font-size: 0.9rem;
+    }
+
+    .editar-perfil button {
+        font-size: 1rem;
+    }
+}

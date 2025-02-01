@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="perfil-container">
+        <h1>Perfil de {{ user.username }}</h1>
+        
+        <div class="perfil-info">
+            {% if perfil %}
+                <div class="perfil-foto">
+                    <img src="{{ perfil.foto_perfil.url }}" alt="Foto de perfil" style="width: 150px; height: 150px;">
+                </div>
+                <div class="perfil-bio">
+                    <p>{{ perfil.bio }}</p>
+                </div>
+            {% else %}
+                <p>No tienes un perfil. Completa los detalles a continuación:</p>
+            {% endif %}
+        </div>
+
+        <div class="editar-perfil">
+            <h3>Editar Perfil</h3>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <div class="form-actions">
+                    <button type="submit">Guardar cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

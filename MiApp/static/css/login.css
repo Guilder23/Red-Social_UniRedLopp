@@ -1,0 +1,98 @@
+/* Contenedor principal del login */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    color: #131111;
+    font-family: 'Arial', sans-serif;
+    max-width: 500px;
+    
+}
+
+/* Título del formulario */
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: #0c0b0b;
+}
+
+/* Formulario */
+.form-login {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    background-color: #2a5298;
+}
+
+/* Estilo de los campos del formulario */
+.form-login input {
+    width: 90%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #080808;
+    font-size: 16px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto al enfocar */
+.form-login input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Botón del formulario */
+.form-login button {
+    padding: 12px 15px;
+    margin-top: 15px;
+    background: linear-gradient(135deg, #4caf50, #66bb6a);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto hover y activo */
+.form-login button:hover {
+    background: linear-gradient(135deg, #43a047, #5aaf6f);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.form-login button:active {
+    transform: scale(0.98);
+}
+
+/* Estilo del formulario en dispositivos pequeños */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .login-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .form-login input {
+        font-size: 14px;
+    }
+
+    .form-login button {
+        font-size: 14px;
+    }
+}

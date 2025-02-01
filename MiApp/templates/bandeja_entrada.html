@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="containerBandeja">
+    <h2>Bandeja de Entrada</h2>
+
+    <!-- Mostrar los emisores y la cantidad de mensajes no leídos -->
+    <ul class="bandeja-lista">
+      {% for emisor in emisores %}
+        <li class="bandeja-item">
+          <div class="user-info">
+            <!-- Foto de perfil del emisor -->
+            {% if emisor.emisor.perfil.foto_perfil %}
+              <img src="{{ emisor.emisor.perfil.foto_perfil.url }}" alt="Foto de perfil" width="40" height="40">
+            {% else %}
+              <img src="/static/default-avatar.png" alt="Foto de perfil" width="40" height="40">
+            {% endif %}
+            <h3>{{ emisor.emisor.username }}</h3>
+          </div>
+          <span>Mensajes no leídos: <div>{{ emisor.cantidad }}</div></span>
+          <a href="{% url 'chat' emisor.emisor.id %}" class="chat-btn">Ir al chat</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
